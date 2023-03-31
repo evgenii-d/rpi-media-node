@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="static/css/thorn-kit.css">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/css/index.css">
+    <script src="static/js/helpers.js" defer></script>
+    <script src="static/js/index.js" defer></script>
+    <title>Node control</title>
+</head>
+
+<body>
+    <main>
+        <section id=details>
+            <input type=text data-name="" value="Media Node" maxlength=20>
+            <h1></h1>
+        </section>
+        <fieldset class=thorn-kit id=apps>
+            <legend>Applications</legend>
+        </fieldset>
+
+        <fieldset class=thorn-kit id=machine-control>
+            <legend>Machine control</legend>
+            <button class=thorn-kit data-cmd=reboot>Reboot</button>
+            <button class=thorn-kit data-cmd=shutdown>Shutdown</button>
+            <button class=thorn-kit data-cmd=hostname>Hostname</button>
+        </fieldset>
+    </main>
+</body>
+
+</html>

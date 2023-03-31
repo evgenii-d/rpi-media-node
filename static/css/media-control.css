@@ -1,0 +1,86 @@
+/* PLAYER SETTINGS */
+#player-settings {
+    padding-top: 0;
+}
+
+/* PLAYLISTS */
+#media-control .no-files {
+    padding: 40px;
+    text-align: center;
+    border: 1px solid #000;
+}
+
+#media-control table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+#media-control table td {
+    text-align: center;
+}
+
+#media-control table td:nth-child(2) {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#media-control table tr td:nth-child(2) {
+    text-align: left;
+}
+
+#media-control table tr th:nth-child(1),
+#media-control table tr td:nth-child(1) {
+    width: 7.5%;
+}
+
+#media-control table tr th:nth-child(2),
+#media-control table tr td:nth-child(2) {
+    width: 50%;
+}
+
+/* PLAYLISTS */
+#playlist-control .no-files {
+    padding: 40px;
+    text-align: center;
+    border: 1px solid #000;
+}
+
+#playlist-control table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+#playlist-control table td {
+    text-align: center;
+}
+
+#playlist-control table td:nth-child(2) {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#playlist-control table tr td:nth-child(2) {
+    text-align: left;
+}
+
+#playlist-control table tr th:nth-child(1),
+#playlist-control table tr td:nth-child(1) {
+    width: 7.5%;
+}
+
+#playlist-control table tr th:nth-child(2),
+#playlist-control table tr td:nth-child(2) {
+    width: 50%;
+}
+
+#playlist-control table tr th:nth-child(3),
+#playlist-control table tr td:nth-child(3) {
+    width: 7.5%;
+}
+
+#playlist-control table tr th:nth-child(4),
+#playlist-control table tr td:nth-child(4) {
+    width: 35%;
+}

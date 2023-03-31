@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="static/css/thorn-kit.css">
+    <link rel="stylesheet" href="static/css/style.css">
+    <script src="static/js/helpers.js" defer></script>
+    <script src="static/js/browser-control.js" defer></script>
+    <title>Web Browser</title>
+</head>
+
+<body>
+    <fieldset class=thorn-kit id=set-startup-page>
+        <legend>Set start page</legend>
+        <input type=text class=thorn-kit placeholder="http://hostname:port/page">
+        <button class=thorn-kit data-cmd=set-page>Set page</button>
+    </fieldset>
+</body>
+
+</html>

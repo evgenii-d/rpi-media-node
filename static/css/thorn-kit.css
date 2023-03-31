@@ -1,0 +1,308 @@
+:root {
+    /* Colors in RGB format only */
+    --thorn-base-color: 0, 0, 0;
+    --thorn-text-color: 0, 0, 0;
+    --thorn-ui-back-color: 255, 255, 255;
+    --thorn-ui-text-color: 255, 255, 255;
+    --thorn-scrollbar-track: 240, 240, 240;
+    --thorn-scrollbar-thumb: 205, 205, 205;
+}
+
+.thorn-kit {
+    color: rgb(var(--thorn-text-color));
+}
+
+.thorn-kit:focus {
+    outline: none;
+}
+
+.thorn-kit:disabled {
+    opacity: .6;
+    pointer-events: none;
+    user-select: none;
+}
+
+/* SCROLLBAR */
+/* firefox */
+.thorn-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(var(--thorn-scrollbar-thumb)) rgb(var(--thorn-scrollbar-track));
+}
+
+/* webkit */
+.thorn-scrollbar::-webkit-scrollbar {
+    min-width: 8px;
+    width: .5rem;
+}
+
+.thorn-scrollbar::-webkit-scrollbar-track {
+    background: rgb(var(--thorn-scrollbar-track));
+}
+
+.thorn-scrollbar::-webkit-scrollbar-thumb {
+    background-color: rgb(var(--thorn-scrollbar-thumb));
+}
+
+/* BUTTON */
+input[type=button].thorn-kit,
+button.thorn-kit,
+input[type=file].thorn-kit::file-selector-button {
+    --font-size: 1rem;
+}
+
+input[type=button].thorn-kit,
+button.thorn-kit {
+    position: relative;
+    font-size: var(--font-size);
+    padding: .4rem .6rem;
+    user-select: none;
+    background: rgb(var(--thorn-base-color));
+    border: .1rem solid transparent;
+    cursor: pointer;
+    color: rgb(var(--thorn-ui-text-color));
+}
+
+input[type=button].thorn-kit:hover,
+button.thorn-kit:hover,
+input[type=file].thorn-kit::file-selector-button:hover {
+    color: rgb(var(--thorn-base-color));
+    background: rgb(var(--thorn-ui-back-color));
+    border-color: rgb(var(--thorn-base-color));
+}
+
+/* CHECKBOX */
+input[type=checkbox].thorn-kit {
+    --size: 1.2rem;
+    --border-size: calc(var(--size) * .14);
+    --mark-size: calc(var(--size) / 3);
+    appearance: none;
+    position: relative;
+    background: rgb(var(--thorn-ui-back-color));
+    width: var(--size);
+    height: var(--size);
+    border: var(--border-size) solid rgb(var(--thorn-base-color));
+    margin: 0;
+    vertical-align: bottom;
+    padding: 0;
+    margin-right: .2rem;
+}
+
+input[type=checkbox].thorn-kit::before {
+    position: absolute;
+    inset: calc(50% - var(--mark-size) / 2);
+    content: '';
+    width: var(--mark-size);
+    height: var(--mark-size);
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1rem 1rem rgb(var(--thorn-base-color));
+    background: rgb(var(--thorn-base-color));
+}
+
+input[type=checkbox].thorn-kit:checked::before {
+    transform: scale(1);
+}
+
+/* RADIO */
+input[type=radio].thorn-kit {
+    --size: 1.2rem;
+    --border-size: calc(var(--size) * .14);
+    --mark-size: calc(var(--size) / 3);
+    appearance: none;
+    position: relative;
+    background: rgb(var(--thorn-ui-back-color));
+    margin: 0;
+    width: var(--size);
+    height: var(--size);
+    border: var(--border-size) solid rgb(var(--thorn-base-color));
+    border-radius: 50%;
+    vertical-align: bottom;
+    margin-right: .4rem;
+}
+
+input[type=radio].thorn-kit::before {
+    position: absolute;
+    inset: calc(50% - var(--mark-size) / 2);
+    content: '';
+    width: var(--mark-size);
+    height: var(--mark-size);
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1rem 1rem rgb(var(--thorn-base-color));
+    background: rgb(var(--thorn-base-color));
+}
+
+input[type=radio].thorn-kit:checked::before {
+    transform: scale(1);
+}
+
+/* RANGE */
+input[type=range].thorn-kit {
+    --thumb-h: 1.6rem;
+    --thumb-w: .6rem;
+    --track-h: .4rem;
+    --thumb-outline: .05rem;
+    appearance: none;
+    height: var(--thumb-h);
+    background: transparent;
+    cursor: pointer;
+}
+
+/* webkit */
+input[type=range].thorn-kit::-webkit-slider-runnable-track {
+    background: rgb(var(--thorn-base-color));
+    height: var(--track-h);
+}
+
+input[type=range].thorn-kit::-webkit-slider-thumb {
+    appearance: none;
+    margin-top: calc(var(--track-h) / 2 - var(--thumb-h) / 2);
+
+    height: var(--thumb-h);
+    width: var(--thumb-w);
+    background: rgb(var(--thorn-ui-back-color));
+    outline: var(--thumb-outline) solid rgb(var(--thorn-base-color));
+}
+
+/* firefox */
+input[type=range].thorn-kit::-moz-range-track {
+    background: rgb(var(--thorn-base-color));
+    height: var(--track-h);
+}
+
+input[type=range].thorn-kit::-moz-range-thumb {
+    border: none;
+    border-radius: 0;
+
+    height: var(--thumb-h);
+    width: var(--thumb-w);
+    background: rgb(var(--thorn-ui-back-color));
+    outline: var(--thumb-outline) solid rgb(var(--thorn-base-color));
+}
+
+input[type=range].thorn-kit:focus::-moz-range-thumb {
+    border: var(--thumb-outline) solid rgb(var(--thorn-base-color));
+    outline: none;
+}
+
+/* INPUT TEXT */
+input[type=text].thorn-kit {
+    font-size: 1rem;
+    color: rgb(var(--thorn-text-color));
+    background: rgb(var(--thorn-ui-back-color));
+    border: .1rem solid rgb(var(--thorn-base-color));
+    padding: .4rem .6rem;
+}
+
+/* INPUT FILE */
+input[type=file].thorn-kit {
+    width: 16rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    border: .1rem solid rgb(var(--thorn-base-color));
+    box-sizing: border-box;
+    padding-right: 1rem;
+    font-size: 1rem;
+}
+
+input[type=file].thorn-kit::file-selector-button {
+    all: unset;
+    position: relative;
+    font-size: var(--font-size);
+    padding: .4rem .6rem;
+    user-select: none;
+    color: rgb(var(--thorn-ui-text-color));
+    background: rgb(var(--thorn-base-color));
+    outline: .1rem solid rgb(var(--thorn-base-color));
+    cursor: pointer;
+    margin-right: 1rem;
+}
+
+/* FIELDSET */
+fieldset.thorn-kit {
+    border: 1px solid rgb(var(--thorn-base-color));
+    background: rgb(var(--thorn-ui-back-color));
+    color: rgb(var(--thorn-text-color));
+}
+
+fieldset.thorn-kit:disabled {
+    opacity: 1;
+    pointer-events: none;
+}
+
+fieldset.thorn-kit:disabled>*:not(legend) {
+    opacity: .6;
+}
+
+fieldset.thorn-kit legend {
+    --padding: .4rem 1rem;
+    --font-size: 1rem;
+    --loading-color: var(--thorn-base-color);
+    position: relative;
+    padding: var(--padding);
+    background: rgb(var(--thorn-base-color));
+    color: rgb(var(--thorn-ui-text-color));
+    user-select: none;
+    font-size: var(--font-size);
+}
+
+@keyframes thorn-fieldset-loading {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+fieldset.thorn-kit legend::after {
+    --size: calc(var(--font-size) / 2);
+    content: '';
+    position: absolute;
+    left: calc(100% + var(--size));
+    width: var(--size);
+    height: var(--size);
+    border: var(--size) solid transparent;
+    border-top: var(--size) solid rgb(var(--loading-color));
+    border-bottom: var(--size) solid rgb(var(--loading-color));
+    border-radius: 100%;
+    animation: thorn-fieldset-loading 1s linear infinite;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+fieldset.thorn-kit[data-loading=true] legend::after {
+    opacity: 1;
+}
+
+/* TABLE */
+table.thorn-kit {
+    border-collapse: collapse;
+    background: rgb(var(--thorn-ui-back-color));
+    font-family: unset;
+}
+
+table.thorn-kit th {
+    color: rgb(var(--thorn-ui-text-color));
+    background: rgb(var(--thorn-base-color));
+}
+
+table.thorn-kit td {
+    color: rgb(var(--thorn-text-color));
+}
+
+table.thorn-kit td,
+table.thorn-kit th {
+    padding: .6rem .8rem;
+}
+
+table.thorn-kit.hover tbody tr:hover {
+    outline: .1rem solid rgb(var(--thorn-base-color));
+}
+
+table.thorn-kit.stripe tr:nth-child(even) {
+    background: rgba(var(--thorn-base-color), .1);
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="static/css/thorn-kit.css">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/css/media-control.css">
+    <script src="static/js/helpers.js" defer></script>
+    <script src="static/js/media-control.js" defer></script>
+    <title>Media Control</title>
+</head>
+
+<body>
+    <main>
+        <fieldset class=thorn-kit id=player-control>
+            <legend>Player control</legend>
+            <button class=thorn-kit data-cmd=play>Play</button>
+            <button class=thorn-kit data-cmd=stop>Stop</button>
+            <button class=thorn-kit data-cmd=prev>Previous</button>
+            <button class=thorn-kit data-cmd=next>Next</button>
+            <button class=thorn-kit data-cmd=quit>Quit</button>
+
+            <section>
+                <h1>Volume</h1>
+                <input class=thorn-kit type=range data-cmd=volume type=range min=0 max=320 value=0>
+            </section>
+
+            <section>
+                <h1>Play selected video</h1>
+                <div id=goto>
+                    <input class=thorn-kit type=text placeholder="video #">
+                    <button class=thorn-kit data-cmd=goto>Goto</button>
+                </div>
+            </section>
+        </fieldset>
+
+        <fieldset class=thorn-kit id=player-settings>
+            <legend>Player settings</legend>
+            <section>
+                <h1>Output module</h1>
+                <label>
+                    <input class=thorn-kit type=radio name=radio value=any>any
+                </label>
+                <br>
+                <label>
+                    <input class=thorn-kit type=radio name=radio value=gles2>gles2
+                </label>
+            </section>
+
+            <section>
+                <h1>Playback</h1>
+                <label>
+                    <input class=thorn-kit type=checkbox value=-L>Loop</label><br>
+                <label>
+                    <input class=thorn-kit type=checkbox value=-R>Repeat</label><br>
+            </section>
+        </fieldset>
+
+        <fieldset class=thorn-kit id=upload-media>
+            <legend>Upload media</legend>
+            <input type=file class=thorn-kit accept=".mp4, .webm, .mkv, .mp3, .wav" multiple>
+            <button class=thorn-kit>Upload</button>
+        </fieldset>
+
+        <fieldset class=thorn-kit id=media-control>
+            <legend>Media Files</legend>
+            <button class=thorn-kit data-cmd=delete>Delete Selected</button>
+            <button class=thorn-kit data-cmd=create>Create Playlist</button>
+            <br> <br>
+            <div id=used-space>Used space: —</div>
+            <br>
+            <table class="thorn-kit stripe hover">
+                <thead>
+                    <tr>
+                        <th><input type=checkbox class=thorn-kit data-cmd=toggle></th>
+                        <th>File name</th>
+                    </tr>
+                </thead>
+                <tbody> </tbody>
+            </table>
+        </fieldset>
+
+        <fieldset class=thorn-kit id=playlist-control>
+            <legend>Playlists</legend>
+            <button class=thorn-kit data-cmd=remove>Remove Selected</button>
+            <button class=thorn-kit data-cmd=update>Update Content</button>
+            <button class=thorn-kit data-cmd=default>Set as Default</button>
+            <button class=thorn-kit data-cmd=delete>Delete Playlist</button>
+            <p>Default Playlist: <span id=default-playlist>—</span></p>
+            <p>Select Playlist <select id=playlists-list></select> </p>
+            <table class="thorn-kit stripe hover">
+                <thead>
+                    <tr>
+                        <th><input type=checkbox class=thorn-kit data-cmd=toggle></th>
+                        <th>File name</th>
+                        <th>#</th>
+                        <th>Order</th>
+                    </tr>
+                </thead>
+                <tbody> </tbody>
+            </table>
+        </fieldset>
+    </main>
+</body>
+
+</html>

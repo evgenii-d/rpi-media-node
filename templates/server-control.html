@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="static/css/thorn-kit.css">
+    <link rel="stylesheet" href="static/css/style.css">
+    <script src="static/js/helpers.js" defer></script>
+    <script src="static/js/server-control.js" defer></script>
+    <title>Web Server</title>
+</head>
+
+<body>
+    <fieldset class=thorn-kit id=upload-app>
+        <legend>Upload Web App</legend>
+        <input type=file class=thorn-kit accept=".zip">
+        <button class=thorn-kit data-cmd=upload>Upload</button>
+    </fieldset>
+
+    <fieldset class=thorn-kit id=misc>
+        <legend>Miscellaneous</legend>
+        <button class=thorn-kit data-cmd=open>Open Page</button>
+        <button class=thorn-kit data-cmd=download>Download archive</button>
+    </fieldset>
+</body>
+
+</html>
